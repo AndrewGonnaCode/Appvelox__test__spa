@@ -1,0 +1,25 @@
+.profile{
+padding-left: 40px;
+padding-bottom:40px;
+}
+.profile__content{
+	padding-top:20px;
+}
+.profile__cards{
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom:20px;
+}
+.profile__doctors{
+	display:flex;
+	align-items: center;
+}
+.profile__title{
+	font-size:16px;
+	font-weight:400;
+	padding-left:20px;
+	padding-bottom:15px;
+}
+.profile a{
+	color: #50CAFF;
+}

@@ -1,0 +1,39 @@
+.record{
+	border:3px solid #EBE7FF;
+	width:475px;
+	height:175px;
+	position:relative;
+	border-radius:5px;
+	margin-right:20px;
+	cursor: pointer;
+	margin-bottom: 15px;
+}
+.record > button{
+	position:absolute;
+	padding:12px 15px;
+	right:20px;
+	bottom:20px;
+	border-radius:5px;
+}
+.record__info p{
+	font-size:14px;
+	font-weight:300;
+}
+.record__info{
+	padding:20px;
+}
+.record__info > h5{
+	margin-bottom:5px;
+}
+.record__doctor{
+	display:flex;
+	margin-top:10px;
+	align-items: center;
+}
+.record__doctor > img{
+	margin-right: 10px;
+}
+.record__doctor > div > p{
+	margin-top: 5px;
+	color: #EBE7FF;
+}

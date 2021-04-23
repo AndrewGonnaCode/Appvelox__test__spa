@@ -1,0 +1,55 @@
+.card{
+	width: 540px;
+	height: 180px;
+	border-radius: 5px;
+	border: 3px solid #EBE7FF;
+	display: flex;
+	margin: 8px;
+	cursor: pointer;
+	align-items: center;
+}
+.open__card{
+	border: 3px solid #50CAFF;
+}
+.card__icon{
+	background-color: #fff;
+	flex:0.25;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 175px;
+	padding: 20px;
+	margin-left:-1px;
+}
+.open__icon{
+   background-color: #50CAFF;
+}
+
+.card__info > h3{
+padding-bottom: 10px;
+ border-bottom: 3px solid #EBE7FF;
+ margin-bottom: 30px;
+ font-size: 28px;
+ white-space: nowrap;
+ font-weight: 400;
+}
+.open__title{
+	border-bottom: 3px solid #50CAFF !important; 
+}
+.card__info{
+	padding: 36px;
+	flex:1;
+}
+
+.card:first-child ul{
+	list-style: none;
+}
+.card:first-child ul li::before{
+  content: "\2022"; 
+  color: #50CAFF; 
+  font-weight: bold; 
+  display: inline-block; 
+  width: 1em;
+  margin-left: -1em; 
+  margin-bottom: 7px;
+}

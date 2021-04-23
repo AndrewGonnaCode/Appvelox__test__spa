@@ -1,0 +1,50 @@
+.records__page{
+	padding: 25px 50px 40px 40px;
+}
+.records__back{
+	display: flex;
+	margin-bottom: 15px;
+}
+.records__back > img{
+	margin-right: 5px;
+	cursor: pointer;
+}
+.records__doctors{
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	height:600px;
+}
+.shown{
+	overflow: scroll;
+}
+.records__doctors::-webkit-scrollbar {
+	width: 8px;
+	height:0px;               
+  }
+  
+  .records__doctors::-webkit-scrollbar-track {
+	background: #EBE7FF;      
+	border-radius: 20px;
+	width:200px;
+	height:300px;
+  }
+  
+  .records__doctors::-webkit-scrollbar-thumb {
+	background-color: #003B72;    
+	border-radius: 20px;       
+	border: 3px solid #003B72; 
+  }
+  .records__doctors > a{
+	  font-size: 14px;
+	  color: #50CAFF;
+	  margin-bottom: 12px;
+	  text-align: right;
+	  margin-right: 25px;
+  }
+  .records__items{
+	  display: flex;
+  }
+  .records__dates{
+	  margin: 0 40px;
+  }
