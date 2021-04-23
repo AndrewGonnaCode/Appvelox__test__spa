@@ -10,25 +10,26 @@ import { NavLink } from 'react-router-dom'
 import './Profile.css'
 
 const Profile = () => {
-	const { records } = useContext(RecordContext)
+	const { state } = useContext(RecordContext)
 	const [isOpenCard, setIsOpenCard] = useState(1)
 	const openCard = (id) => {
 		setIsOpenCard(id)
 	}
+	console.log('RECORDS', state);
 	return (
 		<div className="profile">
 			<div className="profile__content">
-				<h5 className="profile__title">Записи на прием</h5>
+				<h5 className="profile__title">{state.records.length >=1 ? 'Записи на прием':'Записей нет'}</h5>
 				<div className="profile__doctors">
-					{records.slice(0, 2).map(({ id, dateInfo, hospital, address, doctor, img }) => {
+					{state.records.slice(0, 2).map(({ id, dateInfo, hospital, address, doctor, img }) => {
 						return (
-							<RecordCard key={id} dateInfo={dateInfo} hospital={hospital} address={address}
+							<RecordCard id={id} key={id} dateInfo={dateInfo} hospital={hospital} address={address}
 								doctor={doctor} img={img} />
 						)
 					})}
-					{records.length > 2 && (
+					{state.records.length > 2 && (
 						<div>
-							<p>Еще {records.length - 2} записи</p>
+							<p>Еще {state.records.length - 2} записи</p>
 							<NavLink to="/records">
 								<p>Подробнее</p>
 							</NavLink>

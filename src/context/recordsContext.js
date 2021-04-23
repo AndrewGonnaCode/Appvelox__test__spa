@@ -1,10 +1,19 @@
-import { createContext, useEffect, useState } from "react";
-import recordsData from '../data.json'
+import { createContext, useEffect, useState, useReducer } from "react";
+import recordsData from '../data.js'
+import appReducer from './reducer.js'
 
 export const RecordContext = createContext()
 
+export const initialState = {
+    records:recordsData
+};
 export const RecordContextProvider = ({ children }) => {
-	const [data, setData] = useState(recordsData)
+	const [state, dispatch] = useReducer(appReducer, initialState)
+	console.log('STATE', state.records);
+	const remove = (id)=>{
+		dispatch({type:'DELETE', payload:id})
+	}
+
 	// useEffect(() => {
 	// 	async function getData() {
 	// 		const response = await fetch('../data.json')
@@ -13,13 +22,8 @@ export const RecordContextProvider = ({ children }) => {
 	// 	}
 	// 	getData()
 	// }, [])
-	console.log('dataRECORDS', data.records);
-	const removeRecord = (id) => {
-		const newRecords = data.records.filter(rec => rec.id !== id)
-		setData(newRecords)
-	}
 	return (
-		<RecordContext.Provider value={data}>
+		<RecordContext.Provider value={{ state, remove }}>
 			{children}
 		</RecordContext.Provider>
 	)

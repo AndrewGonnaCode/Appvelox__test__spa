@@ -6,8 +6,9 @@ import { RecordContext } from '../context/recordsContext'
 
 
 
-const RecordCard = ({id, dateInfo, hospital, address, doctor, img }) => {
-		// const {removeRecord} = useContext(RecordContext)
+const RecordCard = ({ id, dateInfo, hospital, address, doctor, img }) => {
+	const { remove } = useContext(RecordContext)
+	console.log('remove', remove);
 	const src = img === 'Harkov' ? { Harkov } : { Malushko }
 	const [value] = Object.values(src)
 	return (
@@ -24,7 +25,7 @@ const RecordCard = ({id, dateInfo, hospital, address, doctor, img }) => {
 					</div>
 				</div>
 			</div>
-			<button  className="btn">Отменить</button>
+			<button onClick={()=>remove(id)} className="btn">Отменить</button>
 		</div>
 	)
 }
