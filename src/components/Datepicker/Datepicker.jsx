@@ -4,31 +4,7 @@ import { useDatepicker, START_DATE } from "@datepicker-react/hooks";
 import { jsx } from "@emotion/react";
 import Month from "./Month";
 import DatepickerContext from "./datepickerContext";
-const months = [
-	{ 1: "Январь" },
-	{ 1: "Февраль" },
-	{ 1: "Март" },
-	{ 1: "Апрель" },
-	{ 1: "Май" },
-	{ 1: "Июнь" },
-	{ 1: "Июль" },
-	{ 1: "Август" },
-	{ 1: "" },
-	{ 1: "Январь" },
-	{ 1: "Январь" },
-	{ 1: "Январь" },
-	"Февраль",
-	"Март",
-	"Апрель",
-	"Май",
-	"Июнь",
-	"Июль",
-	"Август",
-	"Сентябрь",
-	"Октябрь",
-	"Ноябрь",
-	"Декабрь"
-];
+
 
 function Datepicker() {
 	const [state, setState] = useState({

@@ -72,8 +72,6 @@ function Day({ dayLabel, date }) {
 
 	const getColorFn = getColor(
 		isSelected,
-		isSelectedStartOrEnd,
-		isWithinHoverRange,
 		disabledDate
 	);
 
@@ -86,6 +84,7 @@ function Day({ dayLabel, date }) {
 			type="button"
 			ref={dayRef}
 			style={{
+				position:"relative",
 				padding: "8px",
 				border: 0,
 				height:"63px",
@@ -94,20 +93,35 @@ function Day({ dayLabel, date }) {
 				color: getColorFn({
 					selectedFirstOrLastColor: "#FFFFFF",
 					normalColor: "#001217",
-					selectedColor: "#FFFFFF",
+					selectedColor: "#000",
 					rangeHoverColor: "#FFFFFF",
 					disabledColor: "#808285"
 				}),
 				background: getColorFn({
 					selectedFirstOrLastColor: "#00aeef",
 					normalColor: "#FFFFFF",
-					selectedColor: "#71c9ed",
+					selectedColor: "#fff",
 					rangeHoverColor: "#71c9ed",
 					disabledColor: "#FFFFFF"
 				})
 			}}
 		>
 			{dayLabel}
+			{isSelected &&
+			<div style={{
+			height:"22px",
+			width:"22px",
+			backgroundColor:"#50CAFF",
+			borderRadius:'100%',
+			position:"absolute",
+			right:"3px",
+			bottom:"3px",
+			color:"#fff",
+			fontSize:"14px",
+			display:'flex',
+			alignItems:'center',
+			justifyContent:'center'
+			}}>1</div>}
 		</button>
 	);
 }
